@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto|Shrikhand');
+
+
+html {
+  font-size: 18px;
+  color: #111;
+  text-align: center;
+  font-family: Roboto, courier, serif;
+}
+
+h1 {
+  font-size: 4em;
+  font-family: Shrikhand, courier, serif;
+  margin-bottom: 0;
+}
+
+h2 {
+  margin: 0 0 1.5em 0;
+}
+
+a {
+  text-decoration: none;
+  color: #A8201A;
+}
+
+hr {
+  width: 50%;
+}
+
+table {
+  margin: 0 auto;
+}
+
+#canvas {
+  border-collapse: collapse;
+}
+
+#canvas td {
+  width: 1em;
+  height: 1em;
+  border: 1px solid rgba(0,0,0,0.1);
+  cursor: crosshair;
+}
+
+#rVal, #gVal, #bVal {
+  font-weight: bold;
+}
+
+#rVal {color: rgb(255,0,0);}
+#gVal {color: rgb(0,255,0);}
+#bVal {color: rgb(0,0,255);}
+
+#swatch {
+  margin: 0.25em auto;
+  width: 8em;
+  height: 4em;
+  border-radius: 5px;
+}
+
+.numBox {
+  padding: 0.5em;
+  border-radius: 5px;
+}
+
+.btn {
+  background: rgb(230, 163, 0);
+  border: none;
+  border-radius: 5px;
+  padding: 0.5em;
+  color: #eee;
+  font-weight: bold;
+  cursor: pointer;
+  text-transform: uppercase;
+  box-shadow: 0 2px 0 rgba(0,0,0,0.1);
+}

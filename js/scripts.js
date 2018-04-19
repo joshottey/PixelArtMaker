@@ -1,6 +1,8 @@
 $(function() {
   let gridWidth = Math.floor(Math.random() * 20) + 1,
-      gridHeight = Math.floor(Math.random() * 20) + 1;
+    gridHeight = Math.floor(Math.random() * 20) + 1;
+
+    console.log(gridWidth + " " + gridHeight);
 
   // set a random color at page load
   randColor();
@@ -17,17 +19,21 @@ $(function() {
 
   $("#buildGrid").on("click", function() {
     let aRow = "",
-        grid = "";
+      grid = "";
 
-    $("#canvas").children().remove();
+    $("#canvas-label").removeClass("hidden");
+
+    $("#canvas")
+      .children()
+      .remove();
 
     // build out a row
-    for(let x = 0; x < gridWidth; x++) {
+    for (let x = 0; x < gridWidth; x++) {
       aRow += "<td></td>";
     }
 
     // build the height
-    for(let y = 0; y < gridHeight; y++) {
+    for (let y = 0; y < gridHeight; y++) {
       grid += "<tr>" + aRow + "</tr>";
     }
 
@@ -35,26 +41,31 @@ $(function() {
     $("#canvas").append(grid);
 
     // add listeners for draw clicks
-    $("#canvas td").click(function() {
-      let myColor = "rgb(" +
-                     $("#r").val() + "," +
-                     $("#g").val() + "," +
-                     $("#b").val() + ")";
-      $(this).css("background", myColor);
+    // TODO: add draggable drawing
+    // if mousedown == true, then use mousemove
+    $("#canvas").mousedown(function() {
+      $("td").mouseover(draw(true));
+      $("td").off("mouseup", draw(false));
     });
   });
 
+  let draw = (toDraw) => {
+    while(toDraw) {
+      let myColor = "rgb(" + $("#r").val() + "," + $("#g").val() + "," + $("#b").val() + ")";
+      $(this).css("background", myColor);
+    }
+  }
+
   // slider listeners
   $("#colorInput").change(onSlide);
-
 });
 
 // slider function
 function onSlide() {
   let myR = $("#r").val(),
-      myG = $("#g").val(),
-      myB = $("#b").val(),
-      asStr = "rgb(" + myR + "," + myG + "," + myB + ")";
+    myG = $("#g").val(),
+    myB = $("#b").val(),
+    asStr = "rgb(" + myR + "," + myG + "," + myB + ")";
 
   // update color values
   $("#rVal").text(myR);

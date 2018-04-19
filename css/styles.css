@@ -1,26 +1,42 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto|Shrikhand');
-
+@import url("https://fonts.googleapis.com/css?family=Roboto|Shrikhand");
 
 html {
   font-size: 18px;
   color: #111;
   text-align: center;
-  font-family: Roboto, courier, serif;
+  font-family: "Roboto", courier, serif;
+}
+
+h1, h2 {
+  margin: 0;
 }
 
 h1 {
   font-size: 4em;
   font-family: Shrikhand, courier, serif;
-  margin-bottom: 0;
 }
 
-h2 {
-  margin: 0 0 1.5em 0;
+#inputArea {
+  margin: 1em auto 0 auto;
+  max-width: 40%;
+  padding: 2em;
+  background-color: #E8E8E8;
+  border-radius: 15px;
+  box-shadow: 0 2px 2px 2px rgba(0,0,0,0.3);
+}
+
+button, a, input {
+  min-height: 45px;
+  min-width: 45px;
 }
 
 a {
   text-decoration: none;
-  color: #A8201A;
+  color: #C03221;
+}
+
+a:hover {
+  text-decoration: underline;
 }
 
 hr {
@@ -38,7 +54,7 @@ table {
 #canvas td {
   width: 1em;
   height: 1em;
-  border: 1px solid rgba(0,0,0,0.1);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   cursor: crosshair;
 }
 
@@ -46,30 +62,45 @@ table {
   font-weight: bold;
 }
 
-#rVal {color: rgb(255,0,0);}
-#gVal {color: rgb(0,255,0);}
-#bVal {color: rgb(0,0,255);}
+#rVal {
+  color: rgb(255, 0, 0);
+}
+#gVal {
+  color: rgb(0, 255, 0);
+}
+#bVal {
+  color: rgb(0, 0, 255);
+}
 
 #swatch {
-  margin: 0.25em auto;
-  width: 8em;
-  height: 4em;
-  border-radius: 5px;
+  margin: 0.5em auto;
+  max-width: 40%;
+  min-height: 4em;
+  border-radius: 15px;
+  border: 5px inset #fff;
 }
 
 .numBox {
-  padding: 0.5em;
   border-radius: 5px;
+  text-align: center;
+  font-size: 1.25em;
+  border: 1px solid #C03221;
 }
 
 .btn {
-  background: rgb(230, 163, 0);
+  background-color: #C03221;
   border: none;
   border-radius: 5px;
   padding: 0.5em;
-  color: #eee;
-  font-weight: bold;
+  color: #fff;
   cursor: pointer;
   text-transform: uppercase;
-  box-shadow: 0 2px 0 rgba(0,0,0,0.1);
+}
+
+.btn:hover {
+  background-color: #9E291C;
+}
+
+.hidden {
+  display: none;
 }

@@ -2,12 +2,12 @@
 
 html {
   font-size: 18px;
-  color: #111;
+  color: #333;
   text-align: center;
   font-family: "Roboto", courier, serif;
 }
 
-h1, h2 {
+body, h1, h2, h3 {
   margin: 0;
 }
 
@@ -16,13 +16,9 @@ h1 {
   font-family: Shrikhand, courier, serif;
 }
 
-#inputArea {
-  margin: 1em auto 0 auto;
-  max-width: 40%;
-  padding: 2em;
-  background-color: #E8E8E8;
-  border-radius: 15px;
-  box-shadow: 0 2px 2px 2px rgba(0,0,0,0.3);
+header {
+  padding: 0 0 0.5em 0;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.2);
 }
 
 button, a, input {
@@ -44,7 +40,7 @@ hr {
 }
 
 table {
-  margin: 0 auto;
+  margin: 0.25em auto;
 }
 
 #canvas {
@@ -74,7 +70,7 @@ table {
 
 #swatch {
   margin: 0.5em auto;
-  max-width: 40%;
+  max-width: 60%;
   min-height: 4em;
   border-radius: 15px;
   border: 5px inset #fff;
@@ -103,4 +99,32 @@ table {
 
 .hidden {
   display: none;
+}
+
+/*
+ *
+ * LAYOUT STARTS HERE
+ *
+*/
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+#inputArea, #canvasArea {
+  margin: 1em;
+}
+
+#inputArea {
+  max-width: 100%;
+  padding: 2em;
+  background-color: #E8E8E8;
+  border-radius: 15px;
+  box-shadow: 0 2px 2px 2px rgba(0,0,0,0.3);
+}
+
+#canvasArea {
 }

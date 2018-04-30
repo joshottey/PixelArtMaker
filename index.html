@@ -11,7 +11,8 @@
   src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
   integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E="
   crossorigin="anonymous"></script>
-  <script src="js/scripts.js" type="text/javascript"></script>
+  <!-- <script src="js/scripts.js" type="text/javascript"></script> -->
+  <script src="js/vanilla.js" type="text/javascript"></script>
 
   <title>Josh's Pixel Art Maker</title>
 </head>
@@ -22,42 +23,44 @@
     <h2 class="sub-title">a <a href="https://www.udacity.com/" target="_blank" title="Udacity">Udacity</a> project by <a href="https://joshottey.github.io" target="_blank" title="GitHub">Joshua Ottey</a></h2>
   </header>
 
-<section id="inputArea">
+<div class="flex">
+  <section id="inputArea">
 
-  <form id="inputGrid">
-    <input type="number" class="numBox" id="inputCols" min="1" max="50" placeholder="width">
-    <input type="number" class="numBox" id="inputRows" min="1" max="50" placeholder="height">
-    <input type="button" class="btn" id="buildGrid" value="Build Grid">
-  </form>
-
-  <div id="colorSelect">
-    <h3>Choose a color:</h3>
-    <form id="colorInput">
-      <table>
-        <tr>
-          <td id="rVal"></td>
-          <td><input id="r" type="range" min="0" max="255"></td>
-        </tr>
-        <tr>
-          <td id="gVal"></td>
-          <td><input id="g" type="range" min="0" max="255"></td>
-        </tr>
-        <tr>
-          <td id="bVal"></td>
-          <td><input id="b" type="range" min="0" max="255"></td>
-        </tr>
-      </table>
+    <form id="inputGrid">
+      <input type="number" class="numBox" id="inputCols" min="1" max="50" placeholder="width">
+      <input type="number" class="numBox" id="inputRows" min="1" max="50" placeholder="height">
+      <input type="button" class="btn" id="buildGrid" value="Build Grid">
     </form>
-    <div id="swatch"></div>
-    <input type="button" class="btn" id="randColor" value="Random Color">
-  </div>
 
-</section>
+    <div id="colorSelect">
+      <h3>Choose a color:</h3>
+      <form id="colorInput">
+        <table>
+          <tr>
+            <td id="rVal"></td>
+            <td><input id="r" type="range" min="0" max="255"></td>
+          </tr>
+          <tr>
+            <td id="gVal"></td>
+            <td><input id="g" type="range" min="0" max="255"></td>
+          </tr>
+          <tr>
+            <td id="bVal"></td>
+            <td><input id="b" type="range" min="0" max="255"></td>
+          </tr>
+        </table>
+      </form>
+      <div id="swatch"></div>
+      <input type="button" class="btn" id="randColor" value="Random Color">
+    </div>
 
-<section id="canvasArea">
-  <h3 class="hidden" id="canvas-label">Your Canvas:</h3>
-  <table id="canvas"></table>
-</section>
+  </section>
+
+  <section id="canvasArea">
+    <h3 id="canvas-label" style="display:none;">Your Canvas:</h3>
+    <table id="canvas"></table>
+  </section>
+</div>
 
 </body>
 </html>
